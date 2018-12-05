@@ -1,0 +1,36 @@
+.mobNavBg {
+  display:none;
+  position: fixed;
+  background-color: rgba(0,0,0,.7);
+  width:100%;
+  height:100vh;
+  top:0px;
+  justify-content: center;
+  align-items: center;
+  z-index: 110;
+
+}
+.mobNav {
+  height:90vh;
+  width:90%;
+  background-color: #e3e5e8;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.btnHolder {
+  height:60%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.mobBtn {
+  color:#854FF0;
+  font-size: 30px;
+  font-family: 'quicksand';
+  margin-top: 20px;
+}

@@ -1,0 +1,191 @@
+@mixin theme {
+  background-color: #242628;
+  min-height: 100vh;
+  width:100%;
+}
+body {
+  padding: 0px;
+  margin:0px;
+  overflow-x:hidden;
+  background-color: #242628;
+}
+.account {
+
+  @include theme;
+  padding-top: 70px;
+  .contentHolder {
+    width:100%;
+    min-height:100vh;
+    display: flex;
+    border-top: 2px solid #34373A;
+    .accountInfo {
+      width:30%;
+      border-right: 2px solid #34373A;
+      min-height:100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .accPic {
+        border-radius: 100px;
+        height:100px;
+        width:100px;
+        margin-top: 20px;
+        border:2px solid white;
+      }
+      .userName {
+        color: white;
+        font-size: 30px;
+        margin-top: 20px;
+        font-family: 'quicksand';
+      }
+    }
+    .myGallery {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      width:70%;
+      .accountGif {
+        opacity: 0;
+        height:250px;
+        width:33%;
+        animation: showAccGif linear .3s forwards;
+      }
+    }
+  }
+}
+@keyframes showAccGif {
+  100% {
+    opacity:1;
+  }
+}
+@media(max-width:900px){
+  .account {
+      padding-bottom: 100px !important;
+  }
+  .contentHolder{
+    flex-direction: column;
+    border-top: none !important;
+  }
+  .accountInfo {
+    min-height:30vh !important;
+    width:100% !important;
+    border-right: none;
+  }
+  .myGallery {
+    width:100% !important;
+    margin-top: 10px;
+  }
+}
+
+@media(min-width:1300px){
+  .accountGif {
+    height:350px !important;
+  }
+}
+@media(min-width:1650px){
+  .accountGif {
+    height:400px !important;
+  }
+}
+@media(max-width:600px){
+  .accountGif {
+    width:50% !important;
+  }
+}
+///////////////////////////
+
+/*body {
+  padding: 0px;
+  margin:0px;
+  overflow-x:hidden;
+  background-color: #242628;
+}
+.account {
+  background-color: #242628;
+  min-height: 100vh;
+  width:100%;
+  padding-top: 70px;
+
+}
+.contentHolder {
+  width:100%;
+  min-height:100vh;
+  display: flex;
+  border-top: 2px solid #34373A;
+
+}
+.accountInfo {
+  width:30%;
+  border-right: 2px solid #34373A;
+  min-height:100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.accPic {
+  border-radius: 100px;
+  height:100px;
+  width:100px;
+  margin-top: 20px;
+  border:2px solid white;
+}
+.userName {
+  color: white;
+  font-size: 30px;
+  margin-top: 20px;
+  font-family: 'quicksand';
+}
+.myGallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width:70%;
+
+}
+.accountGif {
+  opacity: 0;
+  height:250px;
+  width:33%;
+  animation: showAccGif linear .3s forwards;
+}
+@keyframes showAccGif {
+  100% {
+    opacity:1;
+  }
+}
+@media(max-width:900px){
+  .account {
+      padding-bottom: 100px !important;
+  }
+  .contentHolder{
+    flex-direction: column;
+    border-top: none !important;
+  }
+  .accountInfo {
+    min-height:30vh !important;
+    width:100% !important;
+    border-right: none;
+  }
+  .myGallery {
+    width:100% !important;
+    margin-top: 10px;
+  }
+}
+
+@media(min-width:1300px){
+  .accountGif {
+    height:350px !important;
+  }
+}
+@media(min-width:1650px){
+  .accountGif {
+    height:400px !important;
+  }
+}
+@media(max-width:600px){
+  .accountGif {
+    width:50% !important;
+  }
+}
+*/

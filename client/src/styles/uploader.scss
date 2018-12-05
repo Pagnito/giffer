@@ -1,0 +1,440 @@
+body {
+  margin:0px;
+  padding:0px;
+  overflow-x: hidden;
+
+}
+@mixin theme {
+ background-color: #242628;
+  min-height: 100vh;
+}
+.uploader {
+  @include theme;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .uploadWindow {
+    width:80%;
+    padding-top: 50px;
+    display:flex;
+    align-content: flex-start;
+    .form {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      box-sizing: border-box;
+      border: 2px solid #242628;
+      background-color: rgba(152,95,199,.6);
+      width:40%;
+      .btns {
+        display:flex;
+        justify-content: space-around;
+        width:100%;
+
+      }
+      .gifConfig {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items:center;
+        .inputHolder {
+            display: flex;
+            width:80%;
+            font-family: 'comfortaa';
+            align-items: center;
+            font-size: 20px;
+            color:white;
+            padding:15px;
+            .title{
+              width:70%;
+            }
+          .inputF {
+            color:#f47742;
+            border: none;
+            padding:5px;
+            padding-left: 10px;
+            border-left: 2px solid white;
+            height: 30px;
+            font-size: 20px;
+            width:30%;
+            margin-left: 15px;
+            font-family: 'comfortaa';
+            outline:none;
+            background-color: transparent;
+          }
+          .inputF::placeholder {
+            color:#db3f3f;
+          }
+          .inputFName {
+            color:#f47742;
+            border: none;
+            padding:5px;
+            padding-left: 10px;
+            border-bottom: 2px solid white;
+            height: 30px;
+            font-size: 20px;
+            width:80%;
+            margin-left: 15px;
+            font-family: 'comfortaa';
+            outline:none;
+            background-color: transparent;
+          }
+          .inputFName::placeholder {
+            color:#EF7742;
+          }
+        }
+      }
+      .createBtnWrap {
+        display: flex;
+        background-color: #EF7742;
+        font-size: 40px;
+        font-family: 'comfortaa';
+        padding: 10px;
+        cursor: pointer;
+        color:white;
+        justify-content: center;
+      }
+      .createBtnWrap:hover {
+        background-color: #51155b;
+        color:#b2ef39;
+      }
+    }
+    .preview {
+      display:flex;
+      width:60%;
+      background-color: rgba(0,0,0,.9);
+      flex-direction: column;
+      .imagesHolder1 {
+        border: 2px solid #242628;
+        display:flex;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color: rgba(14,159,178,.6);
+        min-height: 80px;
+        overflow-x: scroll;
+        .imageError {
+          color: red;
+          font-size: 40px;
+          margin-left: 20px;
+          margin-top: 20px;
+          font-family: 'Comfortaa'
+        }
+        .img {
+          width:auto;
+          height:80px;
+          margin-left: 5px;
+        }
+      }
+      .imagesHolder2 {
+        border: 2px solid #242628;
+        display:flex;
+        height:100%;
+        box-sizing: border-box;
+        padding: 10px;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        #gifText {
+          font-family: 'Verdana';
+          position: absolute;
+          bottom:30px;
+          color:white;
+          background: black;
+          font-size: 12px;
+          border:none;
+          height: auto;
+          word-wrap: break-word;
+          display: flex;
+          justify-content: center;
+          z-index: 10;
+        }
+        #canvas {
+          /*height:360px;
+          width:96%;*/
+          position: absolute;
+          visibility: hidden;
+        }
+        #player {
+          position: absolute;
+          height:400px;
+          width:95%;
+        }
+        .gif {
+          min-height: 360px;
+          max-height:360px;
+          max-height:100%;
+          max-width: 100%;
+        }
+        .imgWrap {
+          margin:5px;
+
+        }
+      }
+    }
+
+  }
+}
+.imgUp {
+  display:none;
+}
+.customUpBtn {
+    font-family: 'comfortaa';
+    border: none;
+    padding:15px;
+    color: #EF7742;
+    background: transparent;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+}
+.customUpBtn:hover {
+  color:lightgreen;
+}
+@media(max-width:960px){
+  .uploadWindow{
+    flex-direction: column-reverse;
+    .form {
+
+      width:100% !important;
+    }
+    .imagesHolder1 {
+      min-height: 80px;
+      margin-top: 0px
+    }
+    .preview {
+      width:100% !important;
+      margin-top: 30px;
+    }
+    .imagesHolder2 {
+      padding: 0px;
+      min-height: 400px;
+      width:100% !important;
+    }
+  }
+  .uploader {
+    padding-bottom: 40px;
+  }
+}
+@media(max-width:600px){
+
+  #player {
+    height:300px !important;
+
+  }
+  .imagesHolder2 {
+    padding: 0px;
+    min-height: 320px !important;
+    width:100% !important;
+  }
+  .uploadWindow {
+    width: 96% !important;
+  }
+
+
+}
+///////////////
+/*body {
+  margin:0px;
+  padding:0px;
+  overflow-x: hidden;
+
+}
+@mixin theme {
+  background-color: #242628;
+  min-height: 100vh;
+}
+.uploader {
+  @include theme;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.uploadWindow {
+  width:80%;
+  min-height:70vh;
+  padding-top: 50px;
+  display:flex;
+  align-content: flex-start;
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 2px solid #242628;
+  background-color: rgba(152,95,199,.6);
+  width:40%;
+}
+.btns {
+  display:flex;
+  justify-content: space-around;
+  width:100%;
+
+}
+.gifConfig {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items:center;
+
+}
+.inputHolder {
+    display: flex;
+    width:80%;
+    font-family: 'comfortaa';
+    align-items: center;
+    font-size: 20px;
+    color:white;
+    padding:15px;
+}
+.title{
+  width:70%;
+}
+.inputF {
+  color:#f47742;
+  border: none;
+  padding:5px;
+  padding-left: 10px;
+  border-left: 2px solid white;
+  height: 30px;
+  font-size: 20px;
+  width:30%;
+  margin-left: 15px;
+  font-family: 'comfortaa';
+  outline:none;
+  background-color: transparent;
+}
+.inputFName {
+  color:#f47742;
+  border: none;
+  padding:5px;
+  padding-left: 10px;
+  border-bottom: 2px solid white;
+  height: 30px;
+  font-size: 20px;
+  width:80%;
+  margin-left: 15px;
+  font-family: 'comfortaa';
+  outline:none;
+  background-color: transparent;
+}
+.inputFName::placeholder {
+  color:#EF7742;
+}
+.createBtnWrap {
+  display: flex;
+  background-color: #EF7742;
+  font-size: 40px;
+  font-family: 'comfortaa';
+  padding: 10px;
+  cursor: pointer;
+  color:white;
+  justify-content: center;
+}
+.createBtnWrap:hover {
+  background-color: #51155b;
+  color:#b2ef39;
+}
+.preview {
+  display:flex;
+  width:60%;
+  background-color: rgba(0,0,0,.9);
+  flex-direction: column;
+}
+.imagesHolder1 {
+  border: 2px solid #242628;
+  display:flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: rgba(14,159,178,.6);
+  min-height: 80px;
+  overflow-x: scroll;
+
+
+}
+.imageError {
+  color: red;
+  font-size: 40px;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-family: 'Comfortaa'
+}
+.img {
+  width:80px;
+  height:80px;
+  margin-left: 5px;
+}
+.imagesHolder2 {
+  border: 2px solid #242628;
+  display:flex;
+  height:100%;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+
+
+}
+.gif {
+  height: 320px;
+  width: 320px;
+}
+.imgWrap {
+  margin:5px;
+
+}
+.imgUp {
+  display:none;
+}
+.customUpBtn {
+    font-family: 'comfortaa';
+    border: none;
+    padding:15px;
+    color: #EF7742;
+    background: transparent;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+}
+.customUpBtn:hover {
+  color:lightgreen;
+}
+@media(max-width:960px){
+  .uploadWindow{
+    flex-direction: column-reverse;
+    }
+    .form {
+
+      width:100% !important;
+    }
+    .imagesHolder1 {
+      min-height: 80px;
+      margin-top: 0px
+    }
+    .preview {
+      width:100% !important;
+      margin-top: 30px;
+    }
+    .imagesHolder2 {
+      padding: 0px;
+      min-height: 200px;
+      width:96% !important;
+    }
+
+  .uploader {
+    padding-bottom: 40px;
+  }
+}
+@media(max-width:600px){
+  .gif {
+    height: 200px !important;
+    width:200px !important;
+  }
+  .imgWrap {
+    margin: 0px !important;
+  }
+}
+*/
